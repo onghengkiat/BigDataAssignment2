@@ -1,0 +1,122 @@
+DROP DATABASE telco_churn;
+
+CREATE DATABASE telco_churn;
+
+USE telco_churn;
+
+CREATE TABLE status (
+  `Customer ID` VARCHAR(20) PRIMARY KEY,
+  Count INT,
+  Quarter VARCHAR(255),
+  `Satisfaction Score` INT,
+  `Customer Status` VARCHAR(50),
+  `Churn Label` VARCHAR(30),
+  `Churn Value` INT,
+  `Churn Score` INT,
+  CLTV INT,
+  `Churn Category` VARCHAR(50),
+  `Churn Reason` VARCHAR(255)
+);
+
+CREATE TABLE location (
+  `Customer ID` VARCHAR(20) PRIMARY KEY,
+  Count INT,
+  Country VARCHAR(50),
+  State VARCHAR(50),
+  City VARCHAR(50),
+  `Zip Code` INT,
+  `Lat Long` VARCHAR(100),
+  Latitude FLOAT,
+  Longitude FLOAT
+);
+
+CREATE TABLE services (
+  `Customer ID` VARCHAR(20) PRIMARY KEY,
+  Count INT,
+  Quarter VARCHAR(30),
+  `Referred a Friend` VARCHAR(30),
+  `Number of Referrals` INT,
+  `Tenure in Months` INT,
+  Offer VARCHAR(30),
+  `Phone Service` VARCHAR(30),
+  `Avg Monthly Long Distance Charges` FLOAT,
+  `Multiple Lines` VARCHAR(30),
+  `Internet Service` VARCHAR(30),
+  `Internet Type` VARCHAR(50),
+  `Avg Monthly GB Download` INT,
+  `Online Security` VARCHAR(30),
+  `Online Backup` VARCHAR(30),
+  `Device Protection Plan` VARCHAR(30),
+  `Premium Tech Support` VARCHAR(30),
+  `Streaming TV` VARCHAR(30),
+  `Streaming Movies` VARCHAR(30),
+  `Streaming Music` VARCHAR(30),
+  `Unlimited Data` VARCHAR(30),
+  `Contract` VARCHAR(50),
+  `Paperless Billing` VARCHAR(30),
+  `Payment Method` VARCHAR(50),
+  `Monthly Charge` FLOAT,
+  `Total Charges` FLOAT,
+  `Total Refunds` FLOAT,
+  `Total Extra Data Charges` INT,
+  `Total Long Distance Charges` FLOAT,
+  `Total Revenue` FLOAT
+);
+
+CREATE TABLE demographics (
+  `Customer ID` VARCHAR(20) PRIMARY KEY,
+  Count INT,
+  Gender VARCHAR(30),
+  Age INT,
+  `Under 30` VARCHAR(30),
+  `Senior Citizen` VARCHAR(30),
+  Married VARCHAR(30),
+  Dependents VARCHAR(30),
+  `Number of Dependents` INT
+);
+
+CREATE TABLE churn (
+  CustomerID VARCHAR(20) PRIMARY KEY,
+  Count INT,
+  Country VARCHAR(50),
+  State VARCHAR(50),
+  City VARCHAR(50),
+  `Zip Code` INT,
+  `Lat Long` VARCHAR(100),
+  Latitude FLOAT,
+  Longitude FLOAT,
+  Gender VARCHAR(30),
+  `Senior Citizen` VARCHAR(30),
+  Partner VARCHAR(30),
+  Dependents VARCHAR(30),
+  `Tenure Months` INT,
+  `Phone Service` VARCHAR(30),
+  `Multiple Lines` VARCHAR(30),
+  `Internet Service` VARCHAR(50),
+  `Online Security` VARCHAR(30),
+  `Online Backup` VARCHAR(30),
+  `Device Protection` VARCHAR(30),
+  `Tech Support` VARCHAR(30),
+  `Streaming TV` VARCHAR(30),
+  `Streaming Movies` VARCHAR(30),
+  Contract VARCHAR(50),
+  `Paperless Billing` VARCHAR(30),
+  `Payment Method` VARCHAR(50),
+  `Monthly Charges` FLOAT,
+  `Total Charges` FLOAT,
+  `Churn Label` VARCHAR(30),
+  `Churn Value` INT,
+  `Churn Score` INT,
+  CLTV INT,
+  `Churn Reason` VARCHAR(255)
+);
+
+CREATE TABLE feature_importance (
+  feature VARCHAR(255) PRIMARY KEY,
+  importance FLOAT
+);
+
+CREATE TABLE prediction_modified (
+  prediction VARCHAR(255) PRIMARY KEY,
+  count INT
+);
