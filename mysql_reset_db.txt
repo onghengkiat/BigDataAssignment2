@@ -75,6 +75,12 @@ CREATE TABLE demographics (
   `Number of Dependents` INT
 );
 
+CREATE TABLE population (
+    `ID` INT PRIMARY KEY,
+    `Zip Code` INT,
+    `Population` INT
+);
+
 CREATE TABLE churn (
   CustomerID VARCHAR(20) PRIMARY KEY,
   Count INT,
