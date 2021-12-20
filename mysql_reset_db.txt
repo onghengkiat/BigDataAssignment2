@@ -123,6 +123,8 @@ CREATE TABLE feature_importance (
 );
 
 CREATE TABLE prediction_modified (
-  prediction VARCHAR(255) PRIMARY KEY,
-  count INT
+  solution VARCHAR(255),
+  prediction VARCHAR(10),
+  count INT,
+  PRIMARY KEY(solution, prediction)
 );
